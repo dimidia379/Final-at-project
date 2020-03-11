@@ -16,3 +16,10 @@ class ProductPage(BasePage):
         in_basket_price=self.browser.find_element(*ProductPageLocators.SUM_IN_BASKET_TOTAL_ALERT)
         product_price=self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE)
         assert in_basket_price.text==product_price.text, "Wrong product price in basket message"
+
+    def should_not_be_success_message(self): # проверяем, что не видно сообщение об успешном добавлении в корзину
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), "Success message is presented, but should not be"
+
+    def success_message_is_disappeared(self): # проверяем, что при добавлении товара в корзину сообщение об успехе исчезает после появления
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), "Success message is not disappeared"
+
