@@ -5,7 +5,7 @@ Faker==4.0.2
 more-itertools==8.1.0
 packaging==20.1
 pluggy==0.13.1
-py==1.8.1
+py==1.10.0
 pyparsing==2.4.6
 pytest==5.1.1
 pytest-rerunfailures==7.0
